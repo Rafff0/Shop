@@ -1,21 +1,12 @@
 import React, { useState } from "react";
 import BusketItem from "./BusketItem";
 
-const Busket = ({ items, onCountUp, onCountDown, onDelete, onDiscount }) => {
-  const [rend, setRend] = useState(true);
+const Busket = ({ items, onCountUp, onCountDown, onDelete,onTotal }) => {
+  
 
   return (
     <div>
-      {rend && (
-        <button
-          onClick={() => {
-            onDiscount();
-            setRend(false);
-          }}
-        >
-          Sale
-        </button>
-      )}
+      <h3>{onTotal()} USD</h3>
       <table>
         <thead>
           <tr>
